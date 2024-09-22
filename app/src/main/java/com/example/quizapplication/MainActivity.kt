@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.activity.ComponentActivity
@@ -37,6 +38,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var animatedTextView: TextView
     private lateinit var videoView: VideoView
     private lateinit var startButton: Button
+    private lateinit var robotStart: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +47,11 @@ class MainActivity : ComponentActivity() {
         videoView = findViewById(R.id.backgroundVideoView)
         animatedTextView = findViewById(R.id.animatedTextView)
         startButton = findViewById(R.id.startButton)
+        robotStart = findViewById(R.id.robotStart)
 
         setupVideoBackground()
         startTextAnimation()
+        startRobotJumpingAnimation()
 
         startButton.setOnClickListener {
             isAnimating = false
@@ -137,6 +141,29 @@ class MainActivity : ComponentActivity() {
         }
 
         animatedTextView.visibility = View.VISIBLE
+        animatorSet.start()
+    }
+
+    private fun startRobotJumpingAnimation() {
+        val upAnimator = ObjectAnimator.ofFloat(robotStart, "translationY", 0f, -50f).apply {
+            duration = 2000
+            interpolator = AccelerateDecelerateInterpolator()
+        }
+
+        val downAnimator = ObjectAnimator.ofFloat(robotStart, "translationY", -50f, 0f).apply {
+            duration = 2000
+            interpolator = AccelerateDecelerateInterpolator()
+        }
+
+        val animatorSet = AnimatorSet().apply {
+            playSequentially(upAnimator, downAnimator)
+            addListener(object : android.animation.AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: android.animation.Animator) {
+                    start()
+                }
+            })
+        }
+
         animatorSet.start()
     }
 }

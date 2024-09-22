@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import com.example.quizapplication.R.id.close_feedback_button
+
 
 class QuestionsActivity : AppCompatActivity() {
 
@@ -28,7 +30,7 @@ class QuestionsActivity : AppCompatActivity() {
         mainLayout = findViewById(R.id.main)
         questionText = findViewById(R.id.question_text)
         feedbackImage = findViewById(R.id.feedback_image)
-        closeFeedbackButton = findViewById(R.id.close_feedback_button)
+        closeFeedbackButton = findViewById(close_feedback_button)
 
         answerButtons = listOf(
             findViewById<Button>(R.id.answer_button_1),
@@ -48,8 +50,7 @@ class QuestionsActivity : AppCompatActivity() {
         }
 
         closeFeedbackButton.setOnClickListener {
-            feedbackImage.visibility = View.GONE
-            closeFeedbackButton.visibility = View.GONE
+            hideFeedback()
             nextQuestion()
         }
     }
@@ -71,7 +72,6 @@ class QuestionsActivity : AppCompatActivity() {
                 }
             }
 
-            // Update the feedback image constraint to be below the last visible button
             lastVisibleButton?.let {
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(mainLayout)
@@ -87,25 +87,42 @@ class QuestionsActivity : AppCompatActivity() {
     private fun handleAnswer(answerIndex: Int) {
         val question = questions[currentQuestionIndex]
 
-        if (question.id == 5) {  // Assuming ID 5 is "Nutzt du einen Passwort Manager?"
-            usesPasswordManager = answerIndex == 0  // "Ja" is the first option (index 0)
+        if (currentQuestionIndex < generalQuestions.size) {
+            showFeedback(answerIndex)
+        } else {
+            nextQuestion()
+        }
+
+        if (question.id == 6) {
+            usesPasswordManager = answerIndex == 0
             questions = generalQuestions + if (usesPasswordManager) {
                 passwordManagerUserQuestions
             } else {
                 nonPasswordManagerUserQuestions
             }
         }
-
-        showFeedback(answerIndex)
     }
 
     private fun showFeedback(answerIndex: Int) {
         val question = questions[currentQuestionIndex]
         if (question.feedbacks.isNotEmpty()) {
+
             feedbackImage.setImageResource(question.feedbacks[answerIndex])
+
+            questionText.visibility = View.GONE
+            answerButtons.forEach { it.visibility = View.GONE }
+
             feedbackImage.visibility = View.VISIBLE
             closeFeedbackButton.visibility = View.VISIBLE
         }
+    }
+
+    private fun hideFeedback() {
+        feedbackImage.visibility = View.GONE
+        closeFeedbackButton.visibility = View.GONE
+        questionText.visibility = View.VISIBLE
+        answerButtons.forEach { it.visibility = View.VISIBLE }
+        mainLayout.foreground = null
     }
 
     private fun nextQuestion() {
@@ -119,11 +136,10 @@ class QuestionsActivity : AppCompatActivity() {
         closeFeedbackButton.visibility = View.GONE
         feedbackImage.visibility = View.GONE
 
-        // Optionally navigate back to the main activity after a delay
         closeFeedbackButton.postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 2000) // Delay in milliseconds
+        }, 2000)
     }
 }
