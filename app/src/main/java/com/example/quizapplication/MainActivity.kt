@@ -32,18 +32,19 @@ class MainActivity : ComponentActivity() {
     private lateinit var factsArray: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val languageCode = LanguageManager.language.code
+        setLocale(languageCode)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val sharedPreferences = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
+
 
         animatedTextView = findViewById(R.id.animatedTextView)
         languageSwitcher = findViewById(R.id.languageSwitcher)
         videoView = findViewById(R.id.backgroundVideoView)
         startButton = findViewById(R.id.startButton)
         robotStart = findViewById(R.id.robotStart)
-
-        val sharedPreferences = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
-        val languageCode = sharedPreferences.getString("language", "de") ?: "de"
-        setLocale(languageCode)
 
         factsArray = resources.getStringArray(R.array.facts)
 
@@ -55,6 +56,7 @@ class MainActivity : ComponentActivity() {
             setLocale(newLanguageCode)
 
             sharedPreferences.edit().putString("language", newLanguageCode).apply()
+            if (LanguageManager.language.code == "de") LanguageManager.language.switchToEnglish() else LanguageManager.language.switchToGerman()
 
             recreate()
         }

@@ -39,7 +39,7 @@ class QuestionsActivity : AppCompatActivity() {
         userId = generateUserId()
 
         // Get the current language
-        currentLanguage = getCurrentLanguage()
+        currentLanguage = LanguageManager.language.code
         Log.d("QuestionsActivity", "Current Language: $currentLanguage")
 
         mainLayout = findViewById(R.id.main)
@@ -71,37 +71,37 @@ class QuestionsActivity : AppCompatActivity() {
             nextQuestion()
         }
 
-        val languageSwitcher = findViewById<ImageView>(languageSwitcher)
-        languageSwitcher.setOnClickListener {
-            Log.d("QuestionsActivity", "Language Switcher clicked")
-            if (currentLanguage == "en") {
-                changeLanguage("de")
-            } else {
-                changeLanguage("en")
-            }
-        }
+//        val languageSwitcher = findViewById<ImageView>(languageSwitcher)
+//        languageSwitcher.setOnClickListener {
+//            Log.d("QuestionsActivity", "Language Switcher clicked")
+//            if (currentLanguage == "en") {
+//                changeLanguage("de")
+//            } else {
+//                changeLanguage("en")
+//            }
+//        }
     }
 
-    private fun saveLanguage(language: String) {
-        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("LANGUAGE_KEY", language)
-        editor.apply()
-        Log.d("QuestionsActivity", "Language Saved: $language")
-    }
-
-    private fun getCurrentLanguage(): String {
-        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-        val language = sharedPreferences.getString("LANGUAGE_KEY", Locale.getDefault().language) ?: Locale.getDefault().language
-        Log.d("QuestionsActivity", "Retrieved Language: $language")
-        return language
-    }
-
-    private fun changeLanguage(language: String) {
-        Log.d("QuestionsActivity", "Changing language to: $language")
-        saveLanguage(language)
-        recreate()
-    }
+//    private fun saveLanguage(language: String) {
+//        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+//        val editor = sharedPreferences.edit()
+//        editor.putString("LANGUAGE_KEY", language)
+//        editor.apply()
+//        Log.d("QuestionsActivity", "Language Saved: $language")
+//    }
+//
+//    private fun getCurrentLanguage(): String {
+//        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+//        val language = sharedPreferences.getString("LANGUAGE_KEY", Locale.getDefault().language) ?: Locale.getDefault().language
+//        Log.d("QuestionsActivity", "Retrieved Language: $language")
+//        return language
+//    }
+//
+//    private fun changeLanguage(language: String) {
+//        Log.d("QuestionsActivity", "Changing language to: $language")
+//        saveLanguage(language)
+//        recreate()
+//    }
 
     private fun generateUserId(): Int {
         // Retrieve the last used user ID from SharedPreferences
