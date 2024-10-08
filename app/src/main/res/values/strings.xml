@@ -1,4 +1,92 @@
 <resources>
-    <string name="app_name">QuizApplication</string>
-    <string name="welcome">Welcome!</string>
+    <string name="app_name">QuizApp</string>
+    <string name="welcome">Willkommen!</string>
+    <string name="start_button">starten</string>
+    <string name="switch_language">Sprache ändern</string>
+    <string name="question_text">Frage</string>
+    <string name="close_feedback">Schließen</string>
+    <string name="subtitle_text">Begleite Roby auf seiner Sicherheitsreise</string>
+    <string name="title_text">Robys Passwort Mission</string>
+    <string name="completion_message">Danke für deine Teilnahme!</string>
+    <string name="lock_icon">Lock Icon</string>
+    <string name="speech_bubble">Sprechblase</string>
+    <string name="robot_start">Roboter</string>
+    <string name="feedback_image">Feedback Bild</string>
+
+    <string name="answer_button_1">Antwort 1</string>
+    <string name="answer_button_2">Antwort 2</string>
+    <string name="answer_button_3">Antwort 3</string>
+    <string name="answer_button_4">Antwort 4</string>
+
+    <string name="feedback_image_1_a">feedback_1_a</string>
+    <string name="feedback_image_1_b">feedback_1_b</string>
+    <string name="feedback_image_1_c">feedback_1_c</string>
+    <string name="feedback_image_2_a">feedback_2_a</string>
+    <string name="feedback_image_2_b">feedback_2_b</string>
+    <string name="feedback_image_2_c">feedback_2_c</string>
+    <string name="feedback_image_3_a">feedback_3_a</string>
+    <string name="feedback_image_3_b">feedback_3_b</string>
+    <string name="feedback_image_4_a">feedback_4_a</string>
+    <string name="feedback_image_4_b">feedback_4_b</string>
+    <string name="feedback_image_4_c">feedback_4_c</string>
+    <string name="feedback_image_4_d">feedback_4_d</string>
+    <string name="feedback_image_5_a">feedback_5_a</string>
+    <string name="feedback_image_5_b">feedback_5_b</string>
+    <string name="feedback_image_5_c">feedback_5_c</string>
+    <string name="feedback_image_5_d">feedback_5_d</string>
+    <string name="feedback_image_6_a">feedback_6_a</string>
+    <string name="feedback_image_6_b">feedback_6_b</string>
+
+    <string name="question_1">Roby muss ein Passwort für sein Konto einrichten, aber er ist sich nicht sicher, wie er es erstellen soll. Kannst du ihm helfen?</string>
+    <string name="question_2">Roby hat ein paar Ideen für sein neues Passwort gesammelt.Hilf ihm, die beste auszuwählen.</string>
+    <string name="question_3">Roby hat bereits ein Passwort für ein anderes Konto. Sollte er dasselbe Passwort für dieses Konto wiederverwenden?</string>
+    <string name="question_4">Roby möchte das neue Passwort, das er erstellt hat, nicht vergessen. Was ist der beste Weg, es zu speichern?</string>
+    <string name="question_5">Roby ist sich nicht ganz sicher, was ein Passwort-Manager macht. Lass es uns ihm erklären.</string>
+    <string name="question_6">Roby überlegt, einen Passwort-Manager zu verwenden. Sollte er das tun?</string>
+
+    <string-array name="options_question_1">
+        <item>Er sollte das Passwort selbst erstellen</item>
+        <item>Sein Browser sollte das Passwort generieren</item>
+        <item>Er sollte einen Passwort-Manager nutzen</item>
+    </string-array>
+    <string-array name="options_question_2">
+        <item>123456</item>
+        <item>f&amp;M3#p12k</item>
+        <item>S0mm3r</item>
+    </string-array>
+    <string-array name="options_question_3">
+        <item>Ja</item>
+        <item>Nein</item>
+    </string-array>
+    <string-array name="options_question_4">
+        <item>Er sollte es sich merken</item>
+        <item>Er sollte es notieren</item>
+        <item>Er sollte es in einem Passwort-Manager speichern</item>
+        <item>Er sollte es im Browser speichern</item>
+    </string-array>
+    <string-array name="options_question_5">
+        <item>Es ist eine Software, die deine Passwörter verschlüsselt speichert</item>
+        <item>Es ist eine Software, die sichere Passwörter für dich erstellt</item>
+        <item>Es ist eine Software, die deine Passwörter automatisch ausfüllt.</item>
+        <item>Es ist eine Software, die alle drei oben genannten Funktionen hat.</item>
+    </string-array>
+    <string-array name="options_question_6">
+        <item>Ja</item>
+        <item>Nein</item>
+    </string-array>
+
+    <string-array name="facts">
+        <item>Mitarbeiter von Unibw verbringen etwa 80% ihrer Arbeitszeit am Computer. Wie sicher sind deine online Daten?</item>
+        <item>Jede Person hat durchschnittlich 50 online Konten. Wie merkst du dir so viele Passwörter?</item>
+        <item>Mehr als 80% von Mitarbeitern von Unibw nutzt gleiche Passwörter für mehrere Kontos. Lass uns das ändern!</item>
+        <item>123456 ist immer noch das meistbenutzte Passwort weltweit. Wie sicher sind deine Passwörter wirklich?</item>
+        <item>Passwörter wie password und qwerty sind immer noch weit verbreitet. Hast du ein sicheres Passwort?</item>
+        <item>Über 80% der Datenlecks passieren wegen schwachen oder gestohlenen Passwörtern. Wie gut schützt du deine online Konten?</item>
+        <item>Jeder Zweite hat bereits einmal ein Passwort vergessen und musste es zurücksetzen. Gehörst du dazu?</item>
+        <item>Bei Cyber Attacks dauert es oft nur Sekunden, um ein einfaches Passwort zu knacken. Wie lange würde deins aushalten?</item>
+        <item>In Deutschland war 2022 jede vierte Person von einem Cyber Attack betroffen. Wie schützt du deine Daten?</item>
+        <item>Nur 1 von 3 Menschen nutzt derzeit einen Passwort-Manager. Gehörst du bereits dazu?</item>
+        <item>Jede Sekunde werden Tausende von Passwörtern gehackt. Ist deins sicher genug?</item>
+        <item>Ein guter Passwort Manager könnte 90% der Sicherheitsrisiken minimieren. Nutzt du bereits einen?</item>
+    </string-array>
 </resources>

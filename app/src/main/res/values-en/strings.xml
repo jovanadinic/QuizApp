@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="welcome">Welcome!</string>
+    <string name="start_button">start</string>
+    <string name="switch_language">Change language</string>
+    <string name="question_text">Question</string>
+    <string name="close_feedback">Close</string>
+    <string name="subtitle_text">Follow Roby on his security journey</string>
+    <string name="title_text">Roby’s Password Mission</string>
+    <string name="completion_message">Thank you for your participation!</string>
+    <string name="lock_icon">Lock Icon</string>
+    <string name="speech_bubble">Speech bubble</string>
+    <string name="robot_start">Robot</string>
+    <string name="feedback_image">Feedback picture</string>
+
+    <string name="answer_button_1">Answer 1</string>
+    <string name="answer_button_2">Answer 2</string>
+    <string name="answer_button_3">Answer 3</string>
+    <string name="answer_button_4">Answer 4</string>
+
+    <string name="feedback_image_1_a">feedback_1_a_en</string>
+    <string name="feedback_image_1_b">feedback_1_b_en</string>
+    <string name="feedback_image_1_c">feedback_1_c_en</string>
+    <string name="feedback_image_2_a">feedback_2_a_en</string>
+    <string name="feedback_image_2_b">feedback_2_b_en</string>
+    <string name="feedback_image_2_c">feedback_2_c_en</string>
+    <string name="feedback_image_3_a">feedback_3_a_en</string>
+    <string name="feedback_image_3_b">feedback_3_b_en</string>
+    <string name="feedback_image_4_a">feedback_4_a_en</string>
+    <string name="feedback_image_4_b">feedback_4_b_en</string>
+    <string name="feedback_image_4_c">feedback_4_c_en</string>
+    <string name="feedback_image_4_d">feedback_4_d_en</string>
+    <string name="feedback_image_5_a">feedback_5_a_en</string>
+    <string name="feedback_image_5_b">feedback_5_b_en</string>
+    <string name="feedback_image_5_c">feedback_5_c_en</string>
+    <string name="feedback_image_5_d">feedback_5_d_en</string>
+    <string name="feedback_image_6_a">feedback_6_a_en</string>
+    <string name="feedback_image_6_b">feedback_6_b_en</string>
+
+
+    <string name="question_1">Roby has to setup a password for his account, but he’s not sure how to create it. Could you help him?</string>
+    <string name="question_2">Roby has collected a few ideas for his new password. Help him choose the best one.</string>
+    <string name="question_3">Roby already has a password for another account. Should he reuse the same password for this one?</string>
+    <string name="question_4">Roby doesn’t want to forget the new password he’s created. What’s the best way to store it?</string>
+    <string name="question_5">Roby isn’t quite sure what a password manager does. Let’s explain it to him.</string>
+    <string name="question_6">Roby is considering to start to use a password manager. Should he do it?</string>
+
+    <string-array name="options_question_1">
+        <item>He should create it by himself</item>
+        <item>He should let his browser create it</item>
+        <item>He should create it with a password manager</item>
+    </string-array>
+    <string-array name="options_question_2">
+        <item>123456</item>
+        <item>f&amp;M3#p12k</item>
+        <item>S0mm3r</item>
+    </string-array>
+    <string-array name="options_question_3">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="options_question_4">
+        <item>He can memorize it</item>
+        <item>He could write it down</item>
+        <item>He may store it in a password manager</item>
+        <item>He can save it in a Browser</item>
+    </string-array>
+    <string-array name="options_question_5">
+        <item>It\'s a software that stores your passwords encrypted</item>
+        <item>It\'s a software that creates safe passwords for you</item>
+        <item>It\'s a software that fills out your passwords automatically</item>
+        <item>It\'s a software that has all three functions named above</item>
+    </string-array>
+    <string-array name="options_question_6">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="facts">
+        <item>Employees at Unibw spend about 80% of their working time at a computer. How secure is your online data?</item>
+        <item>The average person has around 50 online accounts. How do you remember so many passwords?</item>
+        <item>More than 80% of Unibw employees use the same passwords for multiple accounts. Let\'s change that!</item>
+        <item>123456 is still the most commonly used password worldwide. How secure are your passwords really?</item>
+        <item>Passwords like password and qwerty are still widely used. Do you have a secure password?</item>
+        <item>Over 80% of data leaks occur due to weak or stolen passwords. How well do you protect your online accounts?</item>
+        <item>Every second person has already forgotten a password and had to reset it. Are you one of them?</item>
+        <item>In cyber attacks, it often takes only seconds to crack a simple password. How long would yours last?</item>
+        <item>In 2022, every fourth person in Germany was affected by a cyber attack. How do you protect your data?</item>
+        <item>Only 1 in 3 people currently uses a password manager. Are you one of them?</item>
+        <item>Thousands of passwords are hacked every second. Is yours secure enough?</item>
+        <item>A good password manager could minimize 90% of security risks. Are you already using one?</item>
+    </string-array>
+</resources>
