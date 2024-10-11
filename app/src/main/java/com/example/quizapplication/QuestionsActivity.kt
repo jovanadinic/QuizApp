@@ -13,14 +13,14 @@ import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import com.example.quizapplication.R.id.languageSwitcher
-import java.util.*
 
 class QuestionsActivity : AppCompatActivity() {
 
     private var currentQuestionIndex = 0
     private var currentLanguage: String = ""
     private var userId: Int = 0
+    private var totalScore = 0
+    private val maxScore = 90
 
     private lateinit var questions: List<Question>
     private lateinit var questionText: TextView
@@ -38,7 +38,6 @@ class QuestionsActivity : AppCompatActivity() {
         dbHelper = QuizDatabaseHelper(this)
         userId = generateUserId()
 
-        // Get the current language
         currentLanguage = LanguageManager.language.code
         Log.d("QuestionsActivity", "Current Language: $currentLanguage")
 
@@ -48,11 +47,15 @@ class QuestionsActivity : AppCompatActivity() {
         closeFeedbackButton = findViewById(R.id.close_feedback_button)
 
         answerButtons = listOf(
-            findViewById(R.id.answer_button_1),
-            findViewById(R.id.answer_button_2),
-            findViewById(R.id.answer_button_3),
-            findViewById(R.id.answer_button_4)
+            findViewById<Button>(R.id.answer_button_1),
+            findViewById<Button>(R.id.answer_button_2),
+            findViewById<Button>(R.id.answer_button_3),
+            findViewById<Button>(R.id.answer_button_4)
         )
+
+        answerButtons.forEach { button ->
+            button.backgroundTintList = null
+        }
 
         backgroundVideoView = findViewById(R.id.backgroundVideoView)
         setupVideoBackground()
@@ -71,52 +74,19 @@ class QuestionsActivity : AppCompatActivity() {
             nextQuestion()
         }
 
-//        val languageSwitcher = findViewById<ImageView>(languageSwitcher)
-//        languageSwitcher.setOnClickListener {
-//            Log.d("QuestionsActivity", "Language Switcher clicked")
-//            if (currentLanguage == "en") {
-//                changeLanguage("de")
-//            } else {
-//                changeLanguage("en")
-//            }
-//        }
     }
 
-//    private fun saveLanguage(language: String) {
-//        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-//        val editor = sharedPreferences.edit()
-//        editor.putString("LANGUAGE_KEY", language)
-//        editor.apply()
-//        Log.d("QuestionsActivity", "Language Saved: $language")
-//    }
-//
-//    private fun getCurrentLanguage(): String {
-//        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-//        val language = sharedPreferences.getString("LANGUAGE_KEY", Locale.getDefault().language) ?: Locale.getDefault().language
-//        Log.d("QuestionsActivity", "Retrieved Language: $language")
-//        return language
-//    }
-//
-//    private fun changeLanguage(language: String) {
-//        Log.d("QuestionsActivity", "Changing language to: $language")
-//        saveLanguage(language)
-//        recreate()
-//    }
 
     private fun generateUserId(): Int {
-        // Retrieve the last used user ID from SharedPreferences
         val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
         val lastUserId = sharedPreferences.getInt("LAST_USER_ID", 0)
 
-        // Increment the user ID for the new session
         val newUserId = lastUserId + 1
 
-        // Save the new user ID back to SharedPreferences for the next session
         val editor = sharedPreferences.edit()
         editor.putInt("LAST_USER_ID", newUserId)
         editor.apply()
 
-        // Return the new user ID for this session
         return userId
     }
 
@@ -164,18 +134,15 @@ class QuestionsActivity : AppCompatActivity() {
 
     private fun handleAnswer(answerIndex: Int) {
         if (currentQuestionIndex < questions.size) {
-            // Get the current question
+
             val currentQuestion = questions[currentQuestionIndex]
 
-            // Get the selected answer based on the answerIndex
-            val selectedAnswer = currentQuestion.options[answerIndex]
+            totalScore += currentQuestion.points[answerIndex]
 
-            // Store the answer in the database
+            val selectedAnswer = currentQuestion.options[answerIndex]
             dbHelper.insertAnswer(userId, currentQuestion.id, selectedAnswer)
 
-            // Show feedback based on the selected answer
             showFeedback(answerIndex)
-
         } else {
             nextQuestion()
         }
@@ -241,7 +208,16 @@ class QuestionsActivity : AppCompatActivity() {
     }
 
     private fun showCompletionScreen() {
-        questionText.text = getString(R.string.completion_message)
+        val percentageSafe = (totalScore.toFloat() / maxScore * 100)
+        val safetyMessage = getString(R.string.safety_message, percentageSafe.toInt())
+
+        val completionMessage = getString(R.string.completion_message) +
+                "\n" + safetyMessage
+
+        val robotCompletionImage = findViewById<ImageView>(R.id.robot_completion)
+        robotCompletionImage.visibility = View.VISIBLE
+
+        questionText.text = completionMessage
         answerButtons.forEach { it.visibility = View.GONE }
         closeFeedbackButton.visibility = View.GONE
         feedbackImage.visibility = View.GONE
@@ -252,7 +228,7 @@ class QuestionsActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 2000)
+        }, 5000)
     }
 }
 

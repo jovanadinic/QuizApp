@@ -16,6 +16,7 @@ import android.widget.TextView
 import android.widget.VideoView
 import androidx.activity.ComponentActivity
 import androidx.core.animation.addListener
+import androidx.viewpager2.widget.ViewPager2
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
@@ -30,6 +31,9 @@ class MainActivity : ComponentActivity() {
     private lateinit var robotStart: ImageView
     private lateinit var languageSwitcher: ImageView
     private lateinit var factsArray: Array<String>
+    private lateinit var viewPager: ViewPager2
+    private lateinit var nextButton: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val languageCode = LanguageManager.language.code
@@ -45,11 +49,17 @@ class MainActivity : ComponentActivity() {
         videoView = findViewById(R.id.backgroundVideoView)
         startButton = findViewById(R.id.startButton)
         robotStart = findViewById(R.id.robotStart)
+        viewPager = findViewById(R.id.infoViewPager)
+        nextButton = findViewById(R.id.nextButton)
 
         factsArray = resources.getStringArray(R.array.facts)
 
         setupVideoBackground()
         startRobotJumpingAnimation()
+
+        val layouts = listOf(R.layout.info_page_1, R.layout.info_page_2)
+        val adapter = InfoPagerAdapter(layouts, this)
+        viewPager.adapter = adapter
 
         languageSwitcher.setOnClickListener {
             val newLanguageCode = if (languageCode == "de") "en" else "de"
@@ -64,13 +74,34 @@ class MainActivity : ComponentActivity() {
         startButton.setOnClickListener {
             isAnimating = false
             animatorSet.cancel()
-            val intent = Intent(this, QuestionsActivity::class.java)
-            startActivity(intent)
-            finish()
+
+            startButton.visibility = View.GONE
+            findViewById<View>(R.id.title_text).visibility = View.GONE
+            findViewById<View>(R.id.subtitle_text).visibility = View.GONE
+            languageSwitcher.visibility = View.GONE
+            findViewById<View>(R.id.lock_icon).visibility = View.GONE
+            robotStart.visibility = View.GONE
+            findViewById<View>(R.id.speech_bubble).visibility = View.GONE
+            animatedTextView.visibility = View.GONE
+
+            nextButton.visibility = View.VISIBLE
+            viewPager.visibility = View.VISIBLE
         }
 
         if (factsArray.isNotEmpty()) {
             startTextAnimation(factsArray)
+        }
+
+        nextButton.setOnClickListener {
+            if (viewPager.currentItem < layouts.size - 1) {
+                // Move to the next page if not on the last page
+                viewPager.currentItem = viewPager.currentItem + 1
+            } else {
+                // If on the last page, start the quiz
+                val intent = Intent(this@MainActivity, QuestionsActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 

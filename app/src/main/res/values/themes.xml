@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.QuizApplication" parent="Theme.MaterialComponents.Light.NoActionBar"/>
+    <!-- Base application theme -->
+    <style name="Theme.QuizApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Set the default button style to CustomButton -->
+        <item name="buttonStyle">@style/CustomButton</item>
+    </style>
+
+    <!-- Custom button style definition -->
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <!-- Remove the background tint -->
+        <item name="backgroundTint">@null</item>
+        <item name="android:backgroundTint">@null</item>
+
+        <!-- Use the custom drawable background with rounded corners -->
+        <item name="android:background">@drawable/rounded_button_blue</item>
+
+        <!-- Set the text color to white -->
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

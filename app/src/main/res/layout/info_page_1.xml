@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Text on the left -->
+        <TextView
+            android:id="@+id/infoDescription1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/infoDescription1"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"/>
+
+        <!-- Image on the right -->
+        <ImageView
+            android:id="@+id/infoImage1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/university"
+            android:layout_gravity="end"
+            android:paddingEnd="16dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Image on the left -->
+        <ImageView
+            android:id="@+id/infoImage2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/roby_excited"
+            android:layout_gravity="start"
+            android:paddingStart="16dp" />
+
+        <!-- Text on the right -->
+        <TextView
+            android:id="@+id/infoDescription2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/infoDescription2"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:paddingStart="50dp"
+            android:paddingEnd="20dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+</LinearLayout>
