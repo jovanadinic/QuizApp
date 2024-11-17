@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">QuizApp</string>
     <string name="welcome">Welcome!</string>
-    <string name="start_button">start</string>
+    <string name="start_button">Start</string>
     <string name="switch_language">Change language</string>
     <string name="question_text">Question</string>
-    <string name="close_feedback">Close</string>
+    <string name="close_feedback">Next</string>
     <string name="subtitle_text">Follow Roby on his security journey</string>
     <string name="title_text">Roby’s Password Mission</string>
     <string name="completion_message">Thank you for your participation!</string>
@@ -50,11 +50,11 @@
     <string name="feedback_image_6_b">feedback_6_b_en</string>
 
 
-    <string name="question_1">Roby has to setup a password for his account, but he’s not sure how to create it. Could you help him?</string>
+    <string name="question_1">Roby has to setup a password for his account, but he is not sure how to create it. Could you help him?</string>
     <string name="question_2">Roby has collected a few ideas for his new password. Help him choose the best one.</string>
     <string name="question_3">Roby already has a password for another account. Should he reuse the same password for this one?</string>
-    <string name="question_4">Roby doesn’t want to forget the new password he’s created. What’s the best way to store it?</string>
-    <string name="question_5">Roby isn’t quite sure what a password manager does. Let’s explain it to him.</string>
+    <string name="question_4">Roby does not want to forget the new password he has created. What is the best way to store it?</string>
+    <string name="question_5">Roby is not quite sure what a password manager does. Let us explain it to him.</string>
     <string name="question_6">Roby is considering to start to use a password manager. Should he do it?</string>
 
     <string-array name="options_question_1">
@@ -75,13 +75,13 @@
         <item>He can memorize it</item>
         <item>He could write it down</item>
         <item>Save it in a password manager</item>
-        <item>Save it in a Browser</item>
+        <item>Save it in a browser</item>
     </string-array>
     <string-array name="options_question_5">
-        <item>It\'s a software that stores your passwords encrypted</item>
-        <item>It\'s a software that creates safe passwords for you</item>
-        <item>It\'s a software that fills out your passwords automatically</item>
-        <item>It\'s a software that has all three functions named above</item>
+        <item>It is a software that stores your passwords encrypted</item>
+        <item>It is a software that creates safe passwords for you</item>
+        <item>It is a software that fills out your passwords automatically</item>
+        <item>It is a software that has all three functions named above</item>
     </string-array>
     <string-array name="options_question_6">
         <item>Yes</item>
@@ -91,7 +91,7 @@
     <string-array name="facts">
         <item>Employees at Unibw spend about 80% of their working time at a computer. How secure is your online data?</item>
         <item>The average person has around 50 online accounts. How do you remember so many passwords?</item>
-        <item>More than 80% of Unibw employees use the same passwords for multiple accounts. Let\'s change that!</item>
+        <item>More than 80% of Unibw employees use the same passwords for multiple accounts. Let us change that!</item>
         <item>123456 is still the most commonly used password worldwide. How secure are your passwords really?</item>
         <item>Passwords like password and qwerty are still widely used. Do you have a secure password?</item>
         <item>Over 80% of data leaks occur due to weak or stolen passwords. How well do you protect your online accounts?</item>

@@ -18,31 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/infoViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/nextButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/next"
-        android:contentDescription="@string/next"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/title_text"
+        android:textColor="#89C4FF"
+        android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp" />
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/subtitle_text"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="315dp"
         android:fontFamily="@font/inter_bold"
         android:gravity="start"
         android:text="@string/subtitle_text"
@@ -50,44 +46,32 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintVertical_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/languageSwitcher"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/language_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
-        android:contentDescription="@string/switch_language"/>
-
-    <TextView
-        android:id="@+id/title_text"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-150dp"
-        android:layout_marginTop="180dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/title_text"
-        android:textColor="#89C4FF"
-        android:textSize="32sp"
-        android:textStyle="bold"
+        android:contentDescription="@string/switch_language"
+        android:src="@drawable/language_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/lock_icon"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="0dp"
         android:layout_marginStart="40dp"
+        android:contentDescription="@string/lock_icon"
         android:scaleType="fitCenter"
         android:src="@drawable/lock"
-        android:contentDescription="@string/lock_icon"
         app:layout_constraintStart_toEndOf="@id/title_text"
         app:layout_constraintTop_toTopOf="@id/title_text" />
 
@@ -95,12 +79,14 @@
         android:id="@+id/speech_bubble"
         android:layout_width="250dp"
         android:layout_height="180dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginBottom="360dp"
-        android:src="@drawable/speech_bubble"
+        android:layout_marginStart="170dp"
+        android:layout_marginBottom="340dp"
+        android:layout_marginEnd="20dp"
         android:contentDescription="@string/speech_bubble"
+        android:src="@drawable/speech_bubble"
         app:layout_constraintBottom_toBottomOf="@+id/robotStart"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/animatedTextView"
@@ -114,8 +100,8 @@
         android:padding="24dp"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/speech_bubble"
         app:layout_constraintEnd_toEndOf="@id/speech_bubble"
         app:layout_constraintHorizontal_bias="0.0"
@@ -125,9 +111,10 @@
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="120dp"
+        android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="430dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="370dp"
         android:background="@drawable/button_design"
         android:backgroundTint="#456892"
         android:fontFamily="@font/inter_bold"
@@ -138,9 +125,10 @@
         android:textColor="#F5F5F5"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -149,14 +137,34 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="-100dp"
-        android:scaleX="0.7"
-        android:scaleY="0.7"
-        android:src="@drawable/robot_start"
         android:contentDescription="@string/robot_start"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/robot_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/startButton"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

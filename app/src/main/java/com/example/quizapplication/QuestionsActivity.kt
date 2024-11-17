@@ -218,6 +218,9 @@ class QuestionsActivity : AppCompatActivity() {
         robotCompletionImage.visibility = View.VISIBLE
 
         questionText.text = completionMessage
+        questionText.visibility = View.VISIBLE
+        questionText.textAlignment = View.TEXT_ALIGNMENT_CENTER
+
         answerButtons.forEach { it.visibility = View.GONE }
         closeFeedbackButton.visibility = View.GONE
         feedbackImage.visibility = View.GONE
@@ -228,7 +231,7 @@ class QuestionsActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 5000)
+        }, 10000)
     }
 }
 

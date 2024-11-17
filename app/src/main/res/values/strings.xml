@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">QuizApp</string>
     <string name="welcome">Willkommen!</string>
-    <string name="start_button">starten</string>
+    <string name="start_button">Starten</string>
     <string name="switch_language">Sprache ändern</string>
     <string name="question_text">Frage</string>
-    <string name="close_feedback">Schließen</string>
+    <string name="close_feedback">Weiter</string>
     <string name="subtitle_text">Begleite Roby auf seiner Sicherheitsreise</string>
     <string name="title_text">Robys Passwort Mission</string>
     <string name="completion_message">Danke für deine Teilnahme!</string>
