@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var videoView: VideoView
     private lateinit var startButton: Button
     private lateinit var robotStart: ImageView
-    private lateinit var languageSwitcher: ImageView
+    private lateinit var languageSwitcher: TextView
     private lateinit var factsArray: Array<String>
 
 
@@ -51,6 +51,8 @@ class MainActivity : ComponentActivity() {
 
         setupVideoBackground()
         startRobotJumpingAnimation()
+
+        languageSwitcher.text = if (languageCode == "de") "DE" else "EN"
 
         languageSwitcher.setOnClickListener {
             val newLanguageCode = if (languageCode == "de") "en" else "de"

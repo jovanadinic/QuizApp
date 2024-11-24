@@ -3,7 +3,7 @@
     <string name="app_name">QuizApp</string>
     <string name="welcome">Welcome!</string>
     <string name="start_button">Start</string>
-    <string name="switch_language">Change language</string>
+    <string name="switch_language"><u>Change language</u></string>
     <string name="question_text">Question</string>
     <string name="close_feedback">Next</string>
     <string name="subtitle_text">Follow Roby on his security journey</string>
@@ -20,6 +20,7 @@
     <string name="infoDescription2">He is just starting his Bachelor in Computer Science and he’s so excited!</string>
     <string name="infoDescription3">But first, Roby has to setup his university account. </string>
     <string name="infoDescription4">Let’s help him!</string>
+    <string name="score_text">Score: %1$d</string>
 
     <string name="answer_button_1">Answer 1</string>
     <string name="answer_button_2">Answer 2</string>

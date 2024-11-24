@@ -2,7 +2,7 @@
     <string name="app_name">QuizApp</string>
     <string name="welcome">Willkommen!</string>
     <string name="start_button">Starten</string>
-    <string name="switch_language">Sprache ändern</string>
+    <string name="switch_language"><u>Sprache ändern</u></string>
     <string name="question_text">Frage</string>
     <string name="close_feedback">Weiter</string>
     <string name="subtitle_text">Begleite Roby auf seiner Sicherheitsreise</string>
@@ -19,6 +19,7 @@
     <string name="infoDescription2">Er beginnt gerade seinen Bachelor in Informatik und ist sehr aufgeregt!</string>
     <string name="infoDescription3">Aber zuerst muss Roby sein Uni-Konto einrichten.</string>
     <string name="infoDescription4">Lass uns ihm helfen!</string>
+    <string name="score_text">Punkte: %1$d</string>
 
 
     <string name="answer_button_1">Antwort 1</string>
