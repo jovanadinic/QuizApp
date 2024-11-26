@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/backgroundVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_score_text"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/total_score_button"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/safety_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/safety_message_end"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/score_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:id="@+id/robot_image_right"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="-360dp"
+        android:rotation="-15"
+        android:src="@drawable/roby_heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/score_text" />
+
+    <ImageView
+        android:id="@+id/robot_image_left"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="-70dp"
+        android:layout_marginTop="308dp"
+        android:rotation="42"
+        android:src="@drawable/robot_completion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/safety_message" />
+
+    <ImageView
+        android:id="@+id/qr_code_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/bitwarden_qr"
+        app:layout_constraintTop_toBottomOf="@id/safety_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/download_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/download_message"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/qr_code_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/speech_bubble_left"
+        android:layout_width="231dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="28dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/speech_bubble_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/speech_bubble_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/speech_bubble_message"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/speech_bubble_left"
+        app:layout_constraintEnd_toEndOf="@id/speech_bubble_left"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="@id/speech_bubble_left"
+        app:layout_constraintTop_toTopOf="@id/speech_bubble_left"
+        app:layout_constraintVertical_bias="0.466" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

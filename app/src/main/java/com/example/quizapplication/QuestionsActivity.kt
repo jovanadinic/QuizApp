@@ -39,8 +39,6 @@ class QuestionsActivity : AppCompatActivity() {
     private lateinit var scoreTextView: TextView
     private val pageIndicatorCircles = mutableListOf<View>()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
@@ -99,6 +97,14 @@ class QuestionsActivity : AppCompatActivity() {
 
         closeFeedbackButton.background = AppCompatResources.getDrawable(this, R.drawable.rounded_button_blue)
         closeFeedbackButton.backgroundTintList = null
+
+        val closeButton = findViewById<ImageView>(R.id.close_button)
+        closeButton.setOnClickListener {
+            // Stop the quiz and go back to MainActivity
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // End the current activity
+        }
     }
 
 
@@ -296,24 +302,10 @@ class QuestionsActivity : AppCompatActivity() {
     }
 
     private fun showCompletionScreen() {
-        val percentageSafe = (totalScore.toFloat() / maxScore * 100)
-        val safetyMessage = getString(R.string.safety_message, percentageSafe.toInt())
-        val completionMessage = getString(R.string.completion_message) + "\n" + safetyMessage
-        val robotCompletionImage = findViewById<ImageView>(R.id.robot_completion)
-
-        pageIndicatorLayout.visibility = View.GONE
-        robotCompletionImage.visibility = View.VISIBLE
-        questionText.text = completionMessage
-        questionText.visibility = View.VISIBLE
-        questionText.textAlignment = View.TEXT_ALIGNMENT_CENTER
-        answerButtons.forEach { it.visibility = View.GONE }
-        closeFeedbackButton.visibility = View.GONE
-        feedbackVideoView.visibility = View.GONE
-        logSavedAnswers()
-        closeFeedbackButton.postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 10000)
+        val intent = Intent(this, EndScreenActivity::class.java)
+        intent.putExtra("TOTAL_SCORE", totalScore)
+        intent.putExtra("PERCENTAGE_SAFE", (totalScore.toFloat() / maxScore * 100).toInt())
+        startActivity(intent)
+        finish()
     }
 }

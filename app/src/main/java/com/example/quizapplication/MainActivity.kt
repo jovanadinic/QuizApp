@@ -69,7 +69,9 @@ class MainActivity : ComponentActivity() {
         }
 
         startButton.setOnClickListener {
-            startStorylineVideo()
+            val intent = Intent(this, IntroductionActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -99,44 +101,6 @@ class MainActivity : ComponentActivity() {
         videoView.requestFocus()
     }
 
-    private fun startStorylineVideo() {
-        videoView.stopPlayback()
-
-        val videoPath = if (LanguageManager.language.code == "de") {
-            "android.resource://${packageName}/" + R.raw.storyline_de
-        } else {
-            "android.resource://${packageName}/" + R.raw.storyline_en
-        }
-
-        val uri: Uri = Uri.parse(videoPath)
-        videoView.setVideoURI(uri)
-
-        videoView.setOnPreparedListener{ mediaPlayer ->
-            mediaPlayer.isLooping = false
-            videoView.start()
-        }
-
-        videoView.setOnCompletionListener {
-            val intent = Intent(this@MainActivity, QuestionsActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        videoView.setOnErrorListener{ _, what, extra ->
-            Log.e("VideoViewError", "Error occurred: What=$what, Extra=$extra")
-            true
-        }
-
-        startButton.visibility = View.GONE
-        findViewById<View>(R.id.title_text).visibility = View.GONE
-        findViewById<View>(R.id.subtitle_text).visibility = View.GONE
-        languageSwitcher.visibility = View.GONE
-        findViewById<View>(R.id.lock_icon).visibility = View.GONE
-        findViewById<View>(R.id.speech_bubble).visibility = View.GONE
-        findViewById<View>(R.id.animatedTextView).visibility = View.GONE
-        findViewById<View>(R.id.robotStart).visibility = View.GONE
-
-    }
 
     private fun startTextAnimation(factsArray: Array<String>) {
         if (currentTextIndex >= factsArray.size) {
