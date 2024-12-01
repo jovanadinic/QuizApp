@@ -235,6 +235,8 @@ class QuestionsActivity : AppCompatActivity() {
             val color = Color.parseColor(buttonColor)
             selectedButton.backgroundTintList = ColorStateList.valueOf(color)
 
+            dbHelper.exportToCSV(this)
+
             selectedButton.postDelayed({
                 showFeedback(answerIndex)
             }, 2000)
