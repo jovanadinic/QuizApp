@@ -77,7 +77,7 @@ class MainActivity : ComponentActivity() {
         val locale = Locale(languageCode)
         Locale.setDefault(locale)
         val config = Configuration()
-        config.locale = locale
+        config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
     }
 

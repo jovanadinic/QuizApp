@@ -100,10 +100,9 @@ class QuestionsActivity : AppCompatActivity() {
 
         val closeButton = findViewById<ImageView>(R.id.close_button)
         closeButton.setOnClickListener {
-            // Stop the quiz and go back to MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // End the current activity
+            finish()
         }
     }
 
