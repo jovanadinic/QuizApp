@@ -22,7 +22,7 @@
     <string name="infoDescription4">Let’s help him!</string>
     <string name="score_text">Score: %1$d</string>
     <string name="start_quiz_button">Start Quiz</string>
-    <string name="quiz_introduction">Hey! It\'s nice, that you want to follow Roby on his password mission!\n\nIn this Quiz you\'ll answer six questions about password manager and on that way help Roby to set up his uni account.
+    <string name="quiz_introduction">Hey! It\'s nice, that you want to follow Roby on his password mission!\n\nIn this Quiz you\'ll answer six questions about password manager and on that way help Roby to set up his uni account.\n\nFor your answers you can receive 5, 10 or 15 points.
     </string>
     <string name="total_score_text">Total Score: %1$d</string>
     <string name="safety_message_end">Thank you for helping out!\nRoby is %1$d%% safe.</string>

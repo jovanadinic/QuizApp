@@ -21,7 +21,7 @@
     <string name="infoDescription4">Lass uns ihm helfen!</string>
     <string name="score_text">Punkte: %1$d</string>
     <string name="start_quiz_button">Zum Quiz</string>
-    <string name="quiz_introduction">Hey! Schön, dass du Roby auf seiner Passwort Mission begleiten willst!\n\nIn diesem Quiz wirst du sechs Fragen über Passwort-Manager beantworten und somit Roby helfen, seinen Uni-Account anzulegen.
+    <string name="quiz_introduction">Hey! Schön, dass du Roby auf seiner Passwort Mission begleiten willst!\n\nIn diesem Quiz wirst du sechs Fragen über Passwort-Manager beantworten und somit Roby helfen, seinen Uni-Account anzulegen.\n\nFür deine Antworten kannst du jeweils 5, 10 oder 15 Punkte bekommen.
     </string>
     <string name="total_score_text">Gesamtscore: %1$d</string>
     <string name="safety_message_end">Danke für deine Hilfe!\nRoby ist zu %1$d%% sicher.</string>

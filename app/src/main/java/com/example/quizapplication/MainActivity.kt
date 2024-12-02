@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
 
         val sharedPreferences = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
 
-
         animatedTextView = findViewById(R.id.animatedTextView)
         languageSwitcher = findViewById(R.id.languageSwitcher)
         videoView = findViewById(R.id.backgroundVideoView)
