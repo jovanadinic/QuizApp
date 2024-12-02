@@ -27,6 +27,8 @@
     <string name="safety_message_end">Danke für deine Hilfe!\nRoby ist zu %1$d%% sicher.</string>
     <string name="download_message">Lade schnell und einfach einen\nPassword Manager herunter. </string>
     <string name="speech_bubble_message">Mit einem Scan\nzu deiner Sicherheit!</string>
+    <string name="touch_indication_text">Tippe irgendwo, um zu beginnen</string>
+    <string name="touch_icon">Touch icon</string>
 
 
     <string name="answer_button_1">Antwort 1</string>

@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
@@ -26,7 +25,6 @@ class MainActivity : ComponentActivity() {
     private lateinit var animatorSet: AnimatorSet
     private lateinit var animatedTextView: TextView
     private lateinit var videoView: VideoView
-    private lateinit var startButton: Button
     private lateinit var robotStart: ImageView
     private lateinit var languageSwitcher: TextView
     private lateinit var factsArray: Array<String>
@@ -44,8 +42,9 @@ class MainActivity : ComponentActivity() {
         animatedTextView = findViewById(R.id.animatedTextView)
         languageSwitcher = findViewById(R.id.languageSwitcher)
         videoView = findViewById(R.id.backgroundVideoView)
-        startButton = findViewById(R.id.startButton)
         robotStart = findViewById(R.id.robotStart)
+
+        val mainContainer: View = findViewById(R.id.mainContainer)
 
         factsArray = resources.getStringArray(R.array.facts)
 
@@ -68,7 +67,7 @@ class MainActivity : ComponentActivity() {
             startTextAnimation(factsArray)
         }
 
-        startButton.setOnClickListener {
+        mainContainer.setOnClickListener {
             val intent = Intent(this, IntroductionActivity::class.java)
             startActivity(intent)
             finish()
