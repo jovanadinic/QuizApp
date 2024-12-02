@@ -32,6 +32,9 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val languageCode = LanguageManager.language.code
+
+        Log.d("LanguageDebug", "LanguageManager.language.code = ${LanguageManager.language.code}")
+
         setLocale(languageCode)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -77,7 +80,7 @@ class MainActivity : ComponentActivity() {
         val locale = Locale(languageCode)
         Locale.setDefault(locale)
         val config = Configuration()
-        config.setLocale(locale)
+        config.locale = locale
         resources.updateConfiguration(config, resources.displayMetrics)
     }
 

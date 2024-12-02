@@ -170,6 +170,9 @@ class QuestionsActivity : AppCompatActivity() {
     private fun displayQuestion() {
         if (currentQuestionIndex < questions.size) {
             val question = questions[currentQuestionIndex]
+
+            Log.d("ResourceCheck", "Current question text: ${question.question}")
+
             questionText.text = question.question
 
             pageIndicatorLayout.visibility = View.VISIBLE
@@ -194,6 +197,9 @@ class QuestionsActivity : AppCompatActivity() {
             answerButtons.forEachIndexed { index, button ->
                 if (index < question.options.size) {
                     button.text = question.options[index]
+
+                    Log.d("ResourceCheck", "Option ${index + 1}: ${question.options[index]}")
+
                     button.visibility = View.VISIBLE
                     button.layoutParams = button.layoutParams.apply { width = longestOptionWidth }
                     button.isSingleLine = false
