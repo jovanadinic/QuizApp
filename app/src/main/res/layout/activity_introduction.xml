@@ -20,11 +20,11 @@
 
     <ImageView
         android:id="@+id/robot_image"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="-108dp"
-        android:rotation="-33"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="628dp"
+        android:rotation="33"
         android:scaleType="fitCenter"
         android:src="@drawable/robot_start"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,27 +32,26 @@
 
     <TextView
         android:id="@+id/introduction_text"
-        android:layout_width="800dp"
+        android:layout_width="420dp"
         android:layout_height="wrap_content"
         android:text="@string/quiz_introduction"
-        android:textSize="40sp"
+        android:textSize="18sp"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/startQuizButton"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button_design"
         android:backgroundTint="@null"
         android:fontFamily="@font/inter_bold"
@@ -62,10 +61,11 @@
         android:textColor="#F5F5F5"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:padding="0dp"
         android:text="@string/start_quiz_button"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/introduction_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
