@@ -266,6 +266,7 @@ class QuestionsActivity : AppCompatActivity() {
                 feedbackVideoView.start()
             }
 
+            findViewById<View>(R.id.progress_indicator).visibility = View.GONE
             closeFeedbackButton.visibility = View.VISIBLE
             closeFeedbackButton.background = AppCompatResources.getDrawable(this, R.drawable.rounded_button_blue)
             closeFeedbackButton.backgroundTintList = null
@@ -290,6 +291,7 @@ class QuestionsActivity : AppCompatActivity() {
             feedbackVideoView.stopPlayback()
         }
 
+        findViewById<View>(R.id.progress_indicator).visibility = View.VISIBLE
         feedbackVideoView.visibility = View.GONE
         closeFeedbackButton.visibility = View.GONE
         questionText.visibility = View.VISIBLE

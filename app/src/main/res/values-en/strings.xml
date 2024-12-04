@@ -64,7 +64,7 @@
     <string name="question_2">Roby has collected a few ideas for his new password. Help him choose the best one.</string>
     <string name="question_3">Roby already has a password for another account. Should he reuse the same password for this one?</string>
     <string name="question_4">Roby does not want to forget the new password he has created. What is the best way to store it?</string>
-    <string name="question_5">Roby is not quite sure what a password manager does. Let us explain it to him.</string>
+    <string name="question_5">Roby is not quite sure what a password manager does. Let us explain it to him. A password manager is a software...</string>
     <string name="question_6">Roby is considering to start to use a password manager. Should he do it?</string>
 
     <string-array name="options_question_1">
@@ -88,10 +88,10 @@
         <item>Save it in a browser</item>
     </string-array>
     <string-array name="options_question_5">
-        <item>It is a software that stores your passwords encrypted</item>
-        <item>It is a software that creates safe passwords for you</item>
-        <item>It is a software that fills out your passwords automatically</item>
-        <item>It is a software that has all three functions named above</item>
+        <item>...that stores your passwords encrypted</item>
+        <item>...that creates safe passwords for you</item>
+        <item>...that fills out your passwords automatically</item>
+        <item>...that has all three functions named above</item>
     </string-array>
     <string-array name="options_question_6">
         <item>Yes</item>

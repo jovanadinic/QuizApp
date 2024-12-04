@@ -28,9 +28,6 @@ class EndScreenActivity : AppCompatActivity() {
         val safetyMessageTextView = findViewById<TextView>(R.id.safety_message)
         safetyMessageTextView.text = getString(R.string.safety_message_end, percentageSafe)
 
-        val speechBubbleTextView = findViewById<TextView>(R.id.speech_bubble_text)
-        speechBubbleTextView.text = getString(R.string.speech_bubble_message)
-
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
