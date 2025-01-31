@@ -99,13 +99,11 @@
     </string-array>
 
     <string-array name="facts">
-        <item>Mitarbeiter von Unibw verbringen etwa 80% ihrer Arbeitszeit am Computer. Wie sicher sind deine online Daten?</item>
         <item>Jede Person hat durchschnittlich 50 online Konten. Wie merkst du dir so viele Passwörter?</item>
-        <item>Mehr als 80% von Mitarbeitern von Unibw nutzt gleiche Passwörter für mehrere Kontos. Lass uns das ändern!</item>
         <item>123456 ist immer noch das meistbenutzte Passwort weltweit. Wie sicher sind deine Passwörter wirklich?</item>
         <item>Passwörter wie password und qwerty sind immer noch weit verbreitet. Hast du ein sicheres Passwort?</item>
         <item>Über 80% der Datenlecks passieren wegen schwachen oder gestohlenen Passwörtern. Wie gut schützt du deine online Konten?</item>
-        <item>Jeder Zweite hat bereits einmal ein Passwort vergessen und musste es zurücksetzen. Gehörst du dazu?</item>
+        <item>Jede zweite Person hat bereits einmal ein Passwort vergessen und musste es zurücksetzen. Gehörst du dazu?</item>
         <item>Bei Cyber Attacks dauert es oft nur Sekunden, um ein einfaches Passwort zu knacken. Wie lange würde deins aushalten?</item>
         <item>In Deutschland war 2022 jede vierte Person von einem Cyber Attack betroffen. Wie schützt du deine Daten?</item>
         <item>Nur 1 von 3 Menschen nutzt derzeit einen Passwort-Manager. Gehörst du bereits dazu?</item>

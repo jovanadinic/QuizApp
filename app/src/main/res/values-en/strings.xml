@@ -99,9 +99,7 @@
     </string-array>
 
     <string-array name="facts">
-        <item>Employees at Unibw spend about 80% of their working time at a computer. How secure is your online data?</item>
         <item>The average person has around 50 online accounts. How do you remember so many passwords?</item>
-        <item>More than 80% of Unibw employees use the same passwords for multiple accounts. Let us change that!</item>
         <item>123456 is still the most commonly used password worldwide. How secure are your passwords really?</item>
         <item>Passwords like password and qwerty are still widely used. Do you have a secure password?</item>
         <item>Over 80% of data leaks occur due to weak or stolen passwords. How well do you protect your online accounts?</item>

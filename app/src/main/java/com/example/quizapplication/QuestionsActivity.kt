@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Handler
+import android.os.Looper
+import android.view.MotionEvent
 import android.widget.LinearLayout
 import androidx.appcompat.content.res.AppCompatResources
 
@@ -38,6 +41,13 @@ class QuestionsActivity : AppCompatActivity() {
     private lateinit var pointsTextViews: List<TextView>
     private lateinit var scoreTextView: TextView
     private val pageIndicatorCircles = mutableListOf<View>()
+
+    private val timeoutHandler = Handler(Looper.getMainLooper())
+    private val timeoutRunnable = Runnable {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,12 +97,14 @@ class QuestionsActivity : AppCompatActivity() {
         answerButtons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 handleAnswer(index)
+                startInactivityTimer()
             }
         }
 
         closeFeedbackButton.setOnClickListener {
             hideFeedback()
             nextQuestion()
+            startInactivityTimer()
         }
 
         closeFeedbackButton.background = AppCompatResources.getDrawable(this, R.drawable.rounded_button_blue)
@@ -104,8 +116,24 @@ class QuestionsActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        startInactivityTimer()
     }
 
+    private fun startInactivityTimer() {
+        timeoutHandler.removeCallbacks(timeoutRunnable)
+        timeoutHandler.postDelayed(timeoutRunnable, 90_000)
+    }
+
+    override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
+        startInactivityTimer()
+        return super.dispatchTouchEvent(event)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timeoutHandler.removeCallbacks(timeoutRunnable)
+    }
 
     private fun generateUserId(): Int {
         val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
@@ -127,7 +155,7 @@ class QuestionsActivity : AppCompatActivity() {
     }
 
     private fun setupPageIndicator(totalQuestions: Int) {
-        pageIndicatorLayout.removeAllViews() // Clear any existing indicators
+        pageIndicatorLayout.removeAllViews()
         pageIndicatorCircles.clear()
 
         for (i in 0 until totalQuestions) {
@@ -149,17 +177,15 @@ class QuestionsActivity : AppCompatActivity() {
         pageIndicatorCircles.forEachIndexed { index, view ->
             val layoutParams = view.layoutParams as LinearLayout.LayoutParams
             if (index == activeIndex) {
-                // Apply the active circle drawable and larger size
                 layoutParams.width = 15.dpToPx(this)
                 layoutParams.height = 15.dpToPx(this)
                 view.background = AppCompatResources.getDrawable(this, R.drawable.circle_indicator_active)
             } else {
-                // Apply the inactive circle drawable and smaller size
                 layoutParams.width = 12.dpToPx(this)
                 layoutParams.height = 12.dpToPx(this)
                 view.background = AppCompatResources.getDrawable(this, R.drawable.circle_indicator_inactive)
             }
-            view.layoutParams = layoutParams // Apply the updated layout params
+            view.layoutParams = layoutParams
         }
     }
 
@@ -301,6 +327,7 @@ class QuestionsActivity : AppCompatActivity() {
     private fun nextQuestion() {
         currentQuestionIndex++
         displayQuestion()
+        startInactivityTimer()
     }
 
     private fun logSavedAnswers() {
