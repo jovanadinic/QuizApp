@@ -21,7 +21,7 @@
     <string name="infoDescription4">Lass uns ihm helfen!</string>
     <string name="score_text">Punkte: %1$d</string>
     <string name="start_quiz_button">Zum Quiz</string>
-    <string name="quiz_introduction">Hey! Schön, dass du Roby auf seiner Passwort Mission begleiten willst!\n\nIn diesem Quiz wirst du sechs Fragen über Passwort-Manager beantworten und somit Roby helfen, seinen Uni-Account anzulegen.
+    <string name="quiz_introduction">Hey! Schön, dass du Roby auf seiner Passwort Mission begleiten willst!\n\nIn diesem Quiz wirst du sechs Fragen über Passwort-Manager beantworten und somit Roby helfen, seinen Uni-Account anzulegen.\n\nFür deine Antworten kannst du jeweils 5, 10 oder 15 Punkte bekommen.
     </string>
     <string name="total_score_text">Gesamtscore: %1$d</string>
     <string name="safety_message_end">Danke für deine Hilfe!\nRoby ist zu %1$d%% sicher.</string>
@@ -61,7 +61,7 @@
     <string name="question_2">Roby hat ein paar Ideen für sein neues Passwort gesammelt. Hilf ihm, die beste auszuwählen.</string>
     <string name="question_3">Roby hat bereits ein Passwort für ein anderes Konto. Sollte er dasselbe Passwort für dieses Konto wiederverwenden?</string>
     <string name="question_4">Roby möchte das neue Passwort, das er erstellt hat, nicht vergessen. Was ist der beste Weg, es zu speichern?</string>
-    <string name="question_5">Roby ist sich nicht ganz sicher, was ein Passwort-Manager macht. Lass es uns ihm erklären.</string>
+    <string name="question_5">Roby ist sich nicht ganz sicher, was ein Passwort-Manager macht. Lass es uns ihm erklären. Es ist eine Software...</string>
     <string name="question_6">Roby überlegt, einen Passwort-Manager zu verwenden. Sollte er das tun?</string>
 
     <string-array name="options_question_1">
@@ -85,10 +85,10 @@
         <item>Speichern im Browser</item>
     </string-array>
     <string-array name="options_question_5">
-        <item>Es ist eine Software, die deine Passwörter verschlüsselt speichert</item>
-        <item>Es ist eine Software, die sichere Passwörter für dich erstellt</item>
-        <item>Es ist eine Software, die deine Passwörter automatisch ausfüllt.</item>
-        <item>Es ist eine Software, die alle drei oben genannten Funktionen hat.</item>
+        <item>...die deine Passwörter verschlüsselt speichert</item>
+        <item>...die sichere Passwörter für dich erstellt</item>
+        <item>...die deine Passwörter automatisch ausfüllt.</item>
+        <item>...die alle drei oben genannten Funktionen hat.</item>
     </string-array>
     <string-array name="options_question_6">
         <item>Ja</item>
@@ -96,9 +96,7 @@
     </string-array>
 
     <string-array name="facts">
-        <item>Mitarbeiter von Unibw verbringen etwa 80% ihrer Arbeitszeit am Computer. Wie sicher sind deine online Daten?</item>
         <item>Jede Person hat durchschnittlich 50 online Konten. Wie merkst du dir so viele Passwörter?</item>
-        <item>Mehr als 80% von Mitarbeitern von Unibw nutzt gleiche Passwörter für mehrere Kontos. Lass uns das ändern!</item>
         <item>123456 ist immer noch das meistbenutzte Passwort weltweit. Wie sicher sind deine Passwörter wirklich?</item>
         <item>Passwörter wie password und qwerty sind immer noch weit verbreitet. Hast du ein sicheres Passwort?</item>
         <item>Über 80% der Datenlecks passieren wegen schwachen oder gestohlenen Passwörtern. Wie gut schützt du deine online Konten?</item>

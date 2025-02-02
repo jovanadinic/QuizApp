@@ -16,25 +16,17 @@ class EndScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_end_screen)
 
-        // Background video setup
         backgroundVideoView = findViewById(R.id.backgroundVideoView)
         setupVideoBackground()
 
-        // Get the scores from the intent
         val totalScore = intent.getIntExtra("TOTAL_SCORE", 0)
         val percentageSafe = intent.getIntExtra("PERCENTAGE_SAFE", 0)
 
-        // Display Total Score using localized string
         val totalScoreTextView = findViewById<TextView>(R.id.score_text)
         totalScoreTextView.text = getString(R.string.total_score_text, totalScore)
 
-        // Display Safety Percentage using localized string
         val safetyMessageTextView = findViewById<TextView>(R.id.safety_message)
         safetyMessageTextView.text = getString(R.string.safety_message_end, percentageSafe)
-
-        // Speech Bubble Text (optional, based on localization)
-        val speechBubbleTextView = findViewById<TextView>(R.id.speech_bubble_text)
-        speechBubbleTextView.text = getString(R.string.speech_bubble_message)
 
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)

@@ -49,27 +49,16 @@
 
     <ImageView
         android:id="@+id/robot_image_right"
-        android:layout_width="185dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="251dp"
+        android:layout_height="234dp"
+        android:layout_marginTop="396dp"
         android:layout_marginEnd="-360dp"
-        android:rotation="-15"
+        android:rotation="0"
         android:src="@drawable/roby_heart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/score_text" />
-
-    <ImageView
-        android:id="@+id/robot_image_left"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="-70dp"
-        android:layout_marginTop="308dp"
-        android:rotation="42"
-        android:src="@drawable/robot_completion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/safety_message" />
 
     <ImageView
         android:id="@+id/qr_code_image"
@@ -94,36 +83,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
-
-    <ImageView
-        android:id="@+id/speech_bubble_left"
-        android:layout_width="231dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="28dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/speech_bubble_left"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/speech_bubble_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="@string/speech_bubble_message"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/speech_bubble_left"
-        app:layout_constraintEnd_toEndOf="@id/speech_bubble_left"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="@id/speech_bubble_left"
-        app:layout_constraintTop_toTopOf="@id/speech_bubble_left"
-        app:layout_constraintVertical_bias="0.466" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

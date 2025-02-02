@@ -22,7 +22,7 @@
     <string name="infoDescription4">Let’s help him!</string>
     <string name="score_text">Score: %1$d</string>
     <string name="start_quiz_button">Start Quiz</string>
-    <string name="quiz_introduction">Hey! It\'s nice, that you want to follow Roby on his password mission!\n\nIn this Quiz you\'ll answer six questions about password manager and on that way help Roby to set up his uni account.
+    <string name="quiz_introduction">Hey! It\'s nice, that you want to follow Roby on his password mission!\n\nIn this Quiz you\'ll answer six questions about password manager and on that way help Roby to set up his uni account.\n\nFor your answers you can receive 5, 10 or 15 points.
     </string>
     <string name="total_score_text">Total Score: %1$d</string>
     <string name="safety_message_end">Thank you for helping out!\nRoby is %1$d%% safe.</string>
@@ -62,7 +62,7 @@
     <string name="question_2">Roby has collected a few ideas for his new password. Help him choose the best one.</string>
     <string name="question_3">Roby already has a password for another account. Should he reuse the same password for this one?</string>
     <string name="question_4">Roby does not want to forget the new password he has created. What is the best way to store it?</string>
-    <string name="question_5">Roby is not quite sure what a password manager does. Let us explain it to him.</string>
+    <string name="question_5">Roby is not quite sure what a password manager does. Let us explain it to him. It is a software...</string>
     <string name="question_6">Roby is considering to start to use a password manager. Should he do it?</string>
 
     <string-array name="options_question_1">
@@ -86,10 +86,10 @@
         <item>Save it in a browser</item>
     </string-array>
     <string-array name="options_question_5">
-        <item>It is a software that stores your passwords encrypted</item>
-        <item>It is a software that creates safe passwords for you</item>
-        <item>It is a software that fills out your passwords automatically</item>
-        <item>It is a software that has all three functions named above</item>
+        <item>...that stores your passwords encrypted</item>
+        <item>...that creates safe passwords for you</item>
+        <item>...that fills out your passwords automatically</item>
+        <item>...that has all three functions named above</item>
     </string-array>
     <string-array name="options_question_6">
         <item>Yes</item>
@@ -97,9 +97,7 @@
     </string-array>
 
     <string-array name="facts">
-        <item>Employees at Unibw spend about 80% of their working time at a computer. How secure is your online data?</item>
         <item>The average person has around 50 online accounts. How do you remember so many passwords?</item>
-        <item>More than 80% of Unibw employees use the same passwords for multiple accounts. Let us change that!</item>
         <item>123456 is still the most commonly used password worldwide. How secure are your passwords really?</item>
         <item>Passwords like password and qwerty are still widely used. Do you have a secure password?</item>
         <item>Over 80% of data leaks occur due to weak or stolen passwords. How well do you protect your online accounts?</item>
