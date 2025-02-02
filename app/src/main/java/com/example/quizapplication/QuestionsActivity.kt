@@ -4,19 +4,21 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.widget.LinearLayout
-import androidx.appcompat.content.res.AppCompatResources
-
 
 class QuestionsActivity : AppCompatActivity() {
 
@@ -39,6 +41,13 @@ class QuestionsActivity : AppCompatActivity() {
     private lateinit var scoreTextView: TextView
     private val pageIndicatorCircles = mutableListOf<View>()
 
+    private val timeoutHandler = Handler(Looper.getMainLooper())
+    private val timeoutRunnable = Runnable {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
@@ -54,7 +63,6 @@ class QuestionsActivity : AppCompatActivity() {
         closeFeedbackButton = findViewById(R.id.close_feedback_button)
         pageIndicatorLayout = findViewById(R.id.page_indicator)
         scoreTextView = findViewById(R.id.score_text_view)
-
 
         answerButtons = listOf(
             findViewById(R.id.answer_button_1),
@@ -74,7 +82,6 @@ class QuestionsActivity : AppCompatActivity() {
             findViewById(R.id.points_text_4)
         )
 
-
         backgroundVideoView = findViewById(R.id.backgroundVideoView)
         setupVideoBackground()
 
@@ -87,12 +94,14 @@ class QuestionsActivity : AppCompatActivity() {
         answerButtons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 handleAnswer(index)
+                startInactivityTimer()
             }
         }
 
         closeFeedbackButton.setOnClickListener {
             hideFeedback()
             nextQuestion()
+            startInactivityTimer()
         }
 
         closeFeedbackButton.background = AppCompatResources.getDrawable(this, R.drawable.rounded_button_blue)
@@ -100,13 +109,28 @@ class QuestionsActivity : AppCompatActivity() {
 
         val closeButton = findViewById<ImageView>(R.id.close_button)
         closeButton.setOnClickListener {
-            // Stop the quiz and go back to MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // End the current activity
+            finish()
         }
+
+        startInactivityTimer()
     }
 
+    private fun startInactivityTimer() {
+        timeoutHandler.removeCallbacks(timeoutRunnable)
+        timeoutHandler.postDelayed(timeoutRunnable, 90_000)
+    }
+
+    override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
+        startInactivityTimer()
+        return super.dispatchTouchEvent(event)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timeoutHandler.removeCallbacks(timeoutRunnable)
+    }
 
     private fun generateUserId(): Int {
         val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
@@ -128,7 +152,7 @@ class QuestionsActivity : AppCompatActivity() {
     }
 
     private fun setupPageIndicator(totalQuestions: Int) {
-        pageIndicatorLayout.removeAllViews() // Clear any existing indicators
+        pageIndicatorLayout.removeAllViews()
         pageIndicatorCircles.clear()
 
         for (i in 0 until totalQuestions) {
@@ -145,22 +169,19 @@ class QuestionsActivity : AppCompatActivity() {
         updatePageIndicator(0)
     }
 
-
     private fun updatePageIndicator(activeIndex: Int) {
         pageIndicatorCircles.forEachIndexed { index, view ->
             val layoutParams = view.layoutParams as LinearLayout.LayoutParams
             if (index == activeIndex) {
-                // Apply the active circle drawable and larger size
                 layoutParams.width = 15.dpToPx(this)
                 layoutParams.height = 15.dpToPx(this)
                 view.background = AppCompatResources.getDrawable(this, R.drawable.circle_indicator_active)
             } else {
-                // Apply the inactive circle drawable and smaller size
                 layoutParams.width = 12.dpToPx(this)
                 layoutParams.height = 12.dpToPx(this)
                 view.background = AppCompatResources.getDrawable(this, R.drawable.circle_indicator_inactive)
             }
-            view.layoutParams = layoutParams // Apply the updated layout params
+            view.layoutParams = layoutParams
         }
     }
 
@@ -261,6 +282,7 @@ class QuestionsActivity : AppCompatActivity() {
                 feedbackVideoView.start()
             }
 
+            findViewById<View>(R.id.progress_indicator).visibility = View.GONE
             closeFeedbackButton.visibility = View.VISIBLE
             closeFeedbackButton.background = AppCompatResources.getDrawable(this, R.drawable.rounded_button_blue)
             closeFeedbackButton.backgroundTintList = null
@@ -285,6 +307,7 @@ class QuestionsActivity : AppCompatActivity() {
             feedbackVideoView.stopPlayback()
         }
 
+        findViewById<View>(R.id.progress_indicator).visibility = View.VISIBLE
         feedbackVideoView.visibility = View.GONE
         closeFeedbackButton.visibility = View.GONE
         questionText.visibility = View.VISIBLE
@@ -294,6 +317,7 @@ class QuestionsActivity : AppCompatActivity() {
     private fun nextQuestion() {
         currentQuestionIndex++
         displayQuestion()
+        startInactivityTimer()
     }
 
     private fun logSavedAnswers() {
