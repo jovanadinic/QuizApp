@@ -95,13 +95,15 @@
         android:textSize="20sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/inter_bold"
+        android:background="@drawable/gradient_question_background"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:maxLines="5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
-        android:gravity="center"
-        app:layout_constraintVertical_bias="0.4"
-        android:maxLines="5" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/answer_button_1"
